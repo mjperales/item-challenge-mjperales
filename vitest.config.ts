@@ -9,5 +9,6 @@ export default defineConfig({
       reporter: ["text", "json", "html"],
       exclude: ["node_modules/", "dist/", "**/*.config.ts", "**/*.d.ts"],
     },
+    exclude: ["**/node_modules/**", "**/dist/**", "**/cdk.out/**"],
   },
 });
