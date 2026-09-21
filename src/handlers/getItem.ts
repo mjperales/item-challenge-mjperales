@@ -11,9 +11,9 @@ export const getItem = async (id: string | undefined) => {
     console.info("Invalid ID", { itemId: id });
     return {
       statusCode: 400,
-      body: JSON.stringify({
+      body: {
         message: "Invalid ID",
-      }),
+      },
     };
   }
 
@@ -25,20 +25,20 @@ export const getItem = async (id: string | undefined) => {
       console.info("Item not found", { itemId: id });
       return {
         statusCode: 404,
-        body: JSON.stringify({ message: "Item not found" }),
+        body: { message: "Item not found" },
       };
     }
 
     console.info("Success finding item");
     return {
       statusCode: 200,
-      body: JSON.stringify(item),
+      body: item,
     };
   } catch (error) {
     console.error("Error getting item:", { error });
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: "Internal server error" }),
+      body: { message: "Internal server error" },
     };
   }
 };

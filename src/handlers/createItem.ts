@@ -19,7 +19,7 @@ export const createItem = async (input: CreateItemRequest) => {
     console.error("Error:", { errors });
     return {
       statusCode: 400,
-      body: JSON.stringify({ message: errors }),
+      body: { message: errors },
     };
   }
 
@@ -29,13 +29,13 @@ export const createItem = async (input: CreateItemRequest) => {
     console.info("Success: item added.");
     return {
       statusCode: 201,
-      body: JSON.stringify(item),
+      body: item,
     };
   } catch (error) {
     console.error("Internal server error", { error });
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: "Internal server error" }),
+      body: { message: "Internal server error" },
     };
   }
 };
