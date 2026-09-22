@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import * as cdk from "aws-cdk-lib/core";
+import "dotenv/config";
 import { InfrastructureStack } from "../lib/infrastructure-stack";
 
 type EnvironmentName = "dev" | "prod";

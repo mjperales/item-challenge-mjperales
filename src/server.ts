@@ -8,6 +8,7 @@
 import { createServer, IncomingMessage, ServerResponse } from "http";
 import { getItem } from "./handlers/getItem";
 import { createItem } from "./handlers/createItem";
+import "dotenv/config";
 
 const PORT = process.env.PORT || 3000;
 
