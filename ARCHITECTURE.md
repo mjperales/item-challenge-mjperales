@@ -1,5 +1,7 @@
 # Architecture Documentation
 
+## Getting Started
+
 Use `env.example` to setup environment variables.
 
 - Run `pnpm dev` to run server locally and try out two endpoints.
@@ -25,6 +27,8 @@ My strategy:
 TableName: `exam-items-dev`
 PK: `id`
 
+Note: Did not implement a GSI for version.
+
 To query by `version`, I would have to duplicate `version` outside of `metadata` and use a GSI: `verion-index`, PK: `version`.
 
 ## Infrastructure
@@ -47,8 +51,7 @@ infrastructure/
 
 ## Lambdas
 
-I created a seperate file for each lambda. We could also use **one** lambda and call a correponding function for
-each HTTP method.
+I created a seperate file for each lambda.
 
 Lambda locations:
 
