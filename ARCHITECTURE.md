@@ -5,6 +5,21 @@ Use `env.example` to setup environment variables.
 - Run `pnpm dev` to run server locally and try out two endpoints.
 - Run `pnpm test` to run tests
 
+Note: handlers use DynamoDb. I used Docker to test things locally with DynamoDb.
+
+I only implemented two endpoints:
+
+- GET /items/:id
+- POST /items
+
+My strategy:
+
+- Create handlers with tests using in-memory store
+- Create infrastructure with AWS CDK
+- Update handlers and tests to use DynamoDb
+- Update AWS CDK to create a table and add permissions to lambdas
+- Create helper functions to use in handlers and also in local `server.ts`
+
 ## Database Model
 
 TableName: `exam-items-dev`
